@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Children Book &amp; Video Chatbot</title>
+<meta name="description" content="FYP-26-S4-21P: a mobile chatbot that recommends age-appropriate books and educational videos for children.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Placeholders to replace are wrapped in <mark class="todo">. Search for: class="todo" -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Children Book &amp; Video Chatbot</a>
+    <nav class="site-nav" aria-label="Main"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="team.html">Team</a></li><li><a href="app.html">The app</a></li><li><a href="project-log.html">Project log</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Books and videos your child can explore safely</h1>
+      <p class="lead">Children Book &amp; Video Chatbot is a mobile app that recommends age-appropriate books and educational videos through a simple chat. Safety rules run first, and every suggestion explains why it was picked.</p>
+      <div class="actions">
+        <a class="btn primary" href="app.html">See what the app will do</a>
+        <a class="btn secondary" href="project-log.html">Read the project log</a>
+      </div>
+    </div>
+    <figure style="margin:0">
+      <div class="chat" role="group" aria-label="Example conversation">
+        <p class="bubble you">Hi! I’m 7 and I like sharks. What can I read or watch?</p>
+        <div class="bubble bot">
+          Here are two picks for age 7. Anything outside your age or your parent’s limits was removed before I looked for matches.
+        </div>
+        <div class="pick">
+          <strong>Example book title</strong>
+          <p>Picked because it is tagged “sharks” and “ocean animals”, and the reading level fits age 7.</p>
+          <div class="chips"><span class="chip">Book</span><span class="chip">Ages 6 to 8</span><span class="chip safe">Passed safety filter</span></div>
+        </div>
+        <div class="pick video">
+          <strong>Example video title</strong>
+          <p>Picked because it is tagged “sharks” and uses a cartoon style that suits your age.</p>
+          <div class="chips"><span class="chip">Video</span><span class="chip">Ages 5 to 9</span><span class="chip safe">Passed safety filter</span></div>
+        </div>
+      </div>
+      <figcaption class="caption">An illustration of the planned experience. The titles are placeholders, not real results.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Why we’re building it</h2>
+    <p>Children can find almost anything online, and open-ended search or AI tools can return content that is unverified or unsuitable for their age. We are building a catalogue-based alternative: a reviewed set of books and videos, hard age and safety filters applied before any ranking, and parent controls for each child.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Who uses it</h2>
+    <div class="three">
+      <div>
+        <h3>Children</h3>
+        <p>Type a topic or tap a suggestion, get a few picks with reasons, save favourites, and choose how results are shown.</p>
+      </div>
+      <div>
+        <h3>Parents</h3>
+        <p>Create a profile for each child, block topics, set how deep a topic can go at each age, and read reports comparing what was searched with what was recommended.</p>
+      </div>
+      <div>
+        <h3>Administrators</h3>
+        <p>Maintain the catalogue and user accounts, and retrain and deploy the ranking model, from a web portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Project objectives</h2>
+    <ul class="points">
+      <li><strong>Filter first.</strong> Apply age, maturity and parent-set rules before any scoring happens.</li>
+      <li><strong>Match by meaning.</strong> Use a pretrained Sentence Transformers model to compare the child’s request with every catalogue item.</li>
+      <li><strong>Learn from feedback.</strong> Train a small neural ranker offline, with an admin portal to retrain, evaluate and deploy new versions.</li>
+      <li><strong>Measure the results.</strong> Compare against a TF-IDF baseline using Precision@5 and NDCG@5, and check that no returned item breaks a safety rule.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Project facts</h2>
+    <dl class="facts">
+      <dt>Group</dt><dd>FYP-26-S4-21P</dd>
+      <dt>Course</dt><dd>Final year project <mark class="todo">confirm course code (CSCI321 or CSIT321)</mark></dd>
+      <dt>Supervisor</dt><dd>Mr Tian Sion Hui</dd>
+      <dt>Assessor</dt><dd>Mr Japit Sionggo</dd>
+      <dt>Timeline</dt><dd>October 2026 to February 2027</dd>
+      <dt>Current sprint</dt><dd>Sprint 1 (17 to 30 October) <mark class="todo">update each sprint</mark></dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>FYP-26-S4-21P. School of Computer Science &amp; Software Engineering, University of Wollongong at SIM.</p>
+    <p>This is a student final year project. Titles and screens shown here are illustrations, not live data.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* Children Book & Video Chatbot: FYP-26-S4-21P project website
+   Edit the colours in :root. Placeholders are marked with class="todo" in the HTML. */
+:root {
+  --bg: #eef4fb;
+  --surface: #ffffff;
+  --ink: #17233b;
+  --muted: #53627a;
+  --line: #d3deee;
+  --blue: #2f5bea;       /* books, links, primary actions */
+  --plum: #7a4fd3;       /* videos */
+  --leaf: #17805a;       /* safe / approved */
+  --lemon: #ffd23f;      /* current page, highlights */
+  --bot: #e1eafb;
+  --th: #e4ecf8;
+  --todo-bg: #fff1a8;
+  --todo-ink: #3b2f00;
+  --max: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1a2e;
+    --surface: #17233b;
+    --ink: #eaf0fb;
+    --muted: #a9b8d0;
+    --line: #2b3b58;
+    --blue: #8aa8ff;
+    --plum: #b79cf5;
+    --leaf: #4fd1a0;
+    --bot: #223352;
+    --th: #1f2e4b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img, svg { max-width: 100%; }
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 .6em;
+}
+h1 { font-size: clamp(2.3rem, 5.2vw, 3.7rem); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0 0 1em; max-width: 66ch; }
+.lead { font-size: 1.2rem; color: var(--muted); }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--lemon); color: #17233b; padding: .6rem 1rem; z-index: 10;
+}
+.skip:focus { left: 1rem; top: 1rem; }
+
+.wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .5rem 2rem; padding-block: .9rem;
+}
+.brand {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 800; font-size: 1.15rem;
+  color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: .6rem;
+}
+.brand::before {
+  content: ""; width: 1.5rem; height: 1.5rem; border-radius: 4px 9px 4px 9px;
+  background: linear-gradient(90deg, var(--blue) 50%, var(--plum) 50%);
+}
+.site-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; margin: 0; padding: 0; }
+.site-nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; border-bottom: 3px solid transparent; }
+.site-nav a:hover { border-bottom-color: var(--line); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--lemon); font-weight: 700; }
+
+/* Hero */
+.hero { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.page-head { padding-block: clamp(2.2rem, 5vw, 3.5rem) 1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.btn {
+  display: inline-block; padding: .7rem 1.25rem; border-radius: 999px; font-weight: 700; text-decoration: none;
+  border: 2px solid var(--blue);
+}
+.btn.primary { background: var(--blue); color: #fff; }
+.btn.secondary { color: var(--blue); background: transparent; }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #0f1a2e; } }
+.btn:hover { text-decoration: underline; }
+
+/* The chat illustration */
+.chat {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+  padding: 1.1rem; display: grid; gap: .8rem;
+}
+.bubble { padding: .7rem 1rem; max-width: 92%; margin: 0; font-size: 1rem; }
+.bubble.you { justify-self: end; background: var(--blue); color: #fff; border-radius: 18px 18px 4px 18px; }
+@media (prefers-color-scheme: dark) { .bubble.you { color: #0f1a2e; } }
+.bubble.bot { background: var(--bot); border-radius: 18px 18px 18px 4px; }
+.pick {
+  background: var(--bg); border-left: 6px solid var(--blue); border-radius: 4px 12px 12px 4px;
+  padding: .65rem .9rem; font-size: .95rem;
+}
+.pick.video { border-left-color: var(--plum); }
+.pick strong { display: block; }
+.pick p { margin: .25rem 0 0; color: var(--muted); font-size: .9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .45rem; }
+.chip { font-size: .8rem; padding: .1rem .6rem; border-radius: 999px; background: var(--th); }
+.chip.safe { background: transparent; border: 1.5px solid var(--leaf); color: var(--leaf); font-weight: 700; }
+.caption { font-size: .85rem; color: var(--muted); margin: .75rem .25rem 0; }
+
+/* Sections */
+.section { padding-block: clamp(2rem, 4.5vw, 3.2rem); border-top: 1px solid var(--line); }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.three > div { border-top: 4px solid var(--blue); padding-top: .8rem; }
+.three > div:nth-child(2) { border-top-color: var(--plum); }
+.three > div:nth-child(3) { border-top-color: var(--leaf); }
+.three p { margin: 0; }
+
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; max-width: 70ch; }
+.points li { padding-left: 1.6rem; position: relative; }
+.points li::before {
+  content: ""; position: absolute; left: 0; top: .55em; width: .8rem; height: .8rem;
+  border-radius: 2px 6px 2px 6px; background: var(--blue);
+}
+
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 2rem; margin: 0; max-width: 700px; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: 0; }
+
+/* Team */
+.roles { border-bottom: 1px solid var(--line); }
+.role {
+  display: grid; grid-template-columns: minmax(11rem, 1fr) 2fr; gap: .4rem 2rem;
+  padding-block: 1.1rem; border-top: 1px solid var(--line);
+}
+.role h3 { margin: 0; }
+.role .name { color: var(--muted); margin: 0; }
+.role p { margin: 0; }
+
+/* Tables */
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--surface); }
+caption { text-align: left; font-weight: 700; padding: 0 0 .5rem; }
+th, td { text-align: left; padding: .65rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--th); font-weight: 700; }
+td.empty { color: var(--muted); }
+
+/* Sprint list: a real sequence, so it is numbered */
+.sprints { padding-left: 1.4rem; margin: 0; max-width: 780px; }
+.sprints li { padding: .35rem 0 .35rem .4rem; }
+.sprints li::marker { font-weight: 800; color: var(--blue); }
+.sprints strong { display: inline-block; min-width: 9.5rem; }
+
+/* Steps on the app page */
+.steps { padding-left: 1.4rem; margin: 0; max-width: 70ch; }
+.steps li { padding: .3rem 0 .6rem .4rem; }
+.steps li::marker { font-weight: 800; color: var(--plum); }
+
+.placeholder {
+  border: 2px dashed var(--line); border-radius: 12px; aspect-ratio: 16 / 10;
+  display: grid; place-items: center; text-align: center; color: var(--muted); padding: 1rem; font-size: .95rem;
+}
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.video-slot { aspect-ratio: 16 / 9; max-width: 720px; }
+
+/* Placeholders to replace */
+mark.todo { background: var(--todo-bg); color: var(--todo-ink); padding: 0 .3em; border-radius: 3px; }
+
+.site-footer { border-top: 1px solid var(--line); background: var(--surface); padding-block: 1.5rem; color: var(--muted); font-size: .95rem; }
+.site-footer p { margin: 0 0 .25rem; max-width: none; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .three, .shots { grid-template-columns: 1fr; }
+  .role { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; gap: .1rem; }
+  .facts dd { margin-bottom: .8rem; }
+  .sprints strong { display: block; min-width: 0; }
+}
+@media print { .site-nav, .skip { display: none; } body { background: #fff; color: #000; } }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The app | Children Book &amp; Video Chatbot</title>
+<meta name="description" content="FYP-26-S4-21P: a mobile chatbot that recommends age-appropriate books and educational videos for children.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Placeholders to replace are wrapped in <mark class="todo">. Search for: class="todo" -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Children Book &amp; Video Chatbot</a>
+    <nav class="site-nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="team.html">Team</a></li><li><a href="app.html" aria-current="page">The app</a></li><li><a href="project-log.html">Project log</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>What the app will do</h1>
+    <p class="lead">A mobile chat for children and parents, plus a web portal for administrators. The app is in development, and screens and a demo will appear here as each sprint finishes.</p>
+  </div>
+</section>
+
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <h2>How a request works</h2>
+    <ol class="steps">
+      <li><strong>Ask.</strong> The child types a topic or taps a suggested reply.</li>
+      <li><strong>Filter.</strong> Rules remove anything outside the child’s age or the parent’s limits. This happens before any scoring.</li>
+      <li><strong>Rank.</strong> A pretrained language model and a small neural ranker order what is left by how well it matches.</li>
+      <li><strong>Explain.</strong> Each result shows why it was chosen, such as the matching topics and age fit.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Our design choices</h2>
+    <p>These are the choices we are building around. We are still checking how they compare with existing services, so we state them as design goals, not proven advantages.</p>
+    <ul class="points">
+      <li><strong>Books and videos in one chat,</strong> instead of separate apps.</li>
+      <li><strong>Parent controls for each child,</strong> including blocked topics and how deep a topic can go at each age.</li>
+      <li><strong>A reason for every result,</strong> so parents and children can see why something was suggested.</li>
+      <li><strong>Reviewed content only.</strong> The app recommends from a curated catalogue and does not invent titles.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Screens</h2>
+    <div class="shots">
+      <div class="placeholder"><span><mark class="todo">Child chat screen</mark><br>Add a screenshot in Sprint 3</span></div>
+      <div class="placeholder"><span><mark class="todo">Parent restrictions screen</mark><br>Add a screenshot in Sprint 3</span></div>
+      <div class="placeholder"><span><mark class="todo">Parent report screen</mark><br>Add a screenshot in Sprint 4</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Demo video</h2>
+    <div class="placeholder video-slot"><span><mark class="todo">One-minute marketing video</mark><br>Due in the final sprint</span></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>FYP-26-S4-21P. School of Computer Science &amp; Software Engineering, University of Wollongong at SIM.</p>
+    <p>This is a student final year project. Titles and screens shown here are illustrations, not live data.</p>
+  </div>
+</footer>
+</body>
+</html>
